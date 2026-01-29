@@ -1,4 +1,4 @@
-const { Signup } = require("../signup");
+import { Signup } from '../signup.js';
 
 export async function handleSignupSubmit({ raid, userId, charName }) {
   raid.signups.set(

@@ -1,9 +1,5 @@
-const Raid = require("../models/Raid");
-
-const {
-  generateExport,
-  generateRosterExport,
-} = require("../export");
+import Raid from '../models/Raid.js';
+import { generateExport, generateRosterExport } from '../export.js';
 
 export async function createRaid({ channelId, name, slots }) {
   const raid = await Raid.findOneAndUpdate(

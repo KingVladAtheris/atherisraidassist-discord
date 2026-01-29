@@ -1,7 +1,7 @@
 // parsedata.js (fixed with correct path imports)
-const { readFileSync } = require("fs");
-const { join } = require("path");
-
+import { readFileSync } from 'fs';
+import { dirname, join } from 'path'; // Added dirname here
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); // Now works

@@ -1,6 +1,5 @@
-﻿require("dotenv").config();
-
-const {
+﻿import 'dotenv/config';
+import {
   Client,
   GatewayIntentBits,
   InteractionType,
@@ -12,28 +11,15 @@ const {
   ButtonBuilder,
   ButtonStyle,
   MessageFlags,
-} = require("discord.js");
+} from 'discord.js';
+import mongoose from 'mongoose';
+import Raid from './models/Raid.js';
 
-const mongoose = require("mongoose");
-const Raid = require("./models/Raid");
-
-const {
-  createRaid,
-  closeRaid,
-  exportRaid,
-  exportRoster,
-} = require("./core/raidManager");
-
-const {
-  handleSignupSubmit,
-  handleSignupSelect,
-} = require("./core/signupManager");
-
-const { renderRaidView } = require("./ui/renderRaidView");
-const { renderFinalRosterView } = require("./ui/renderFinalRosterView");
-
-const items = require("./parsedata");
-
+import { createRaid, closeRaid, exportRaid, exportRoster } from './core/raidManager.js';
+import { handleSignupSubmit, handleSignupSelect } from './core/signupManager.js';
+import { renderRaidView } from './ui/renderRaidView.js';
+import { renderFinalRosterView } from './ui/renderFinalRosterView.js';
+import items from './parsedata.js';
 
 async function getRaid(channelId) {
   return await Raid.findOne({ channelId });
