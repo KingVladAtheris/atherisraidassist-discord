@@ -1,9 +1,9 @@
-import {
+const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
-} from 'discord.js';
+} = require('discord.js');
 
 // More accurate/representative unicode emojis for WoW classes (best possible without custom)
 const CLASS_EMOJIS = {

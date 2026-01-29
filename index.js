@@ -1,5 +1,5 @@
 ﻿import 'dotenv/config';
-import {
+const {
   Client,
   GatewayIntentBits,
   InteractionType,
@@ -11,7 +11,7 @@ import {
   ButtonBuilder,
   ButtonStyle,
   MessageFlags,
-} from 'discord.js';
+} = require('discord.js');
 import mongoose from 'mongoose';
 import Raid from './models/Raid.js';
 
